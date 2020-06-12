@@ -8,7 +8,7 @@
 # For technical reasons, this file is *NOT* reloaded automatically when you use
 # 'bundle exec jekyll serve'. If you change this file, please restart the server process.
 #
-# If you need help with YAML syntax, here are some quick references for you: 
+# If you need help with YAML syntax, here are some quick references for you:
 # https://learn-the-web.algonquindesign.ca/topics/markdown-yaml-cheat-sheet/#yaml
 # https://learnxinyminutes.com/docs/yaml/
 #
@@ -23,9 +23,9 @@ email: gzn at gzn dot hu
 description: >- # this means to ignore newlines until "baseurl:"
   undescribed
 baseurl: "" # the subpath of your site, e.g. /blog
-url: "https//gzn.hu" # the base hostname & protocol for your site, e.g. http://example.com
-twitter_username: 
-github_username:  gyula-ny
+url: "https://gzn.hu" # the base hostname & protocol for your site, e.g. http://example.com
+twitter_username:
+github_username: gyula-ny
 
 # Build settings
 theme: minima
@@ -33,12 +33,10 @@ plugins:
   - jekyll-feed
 
 defaults:
-  -
-    scope:
+  - scope:
       path: "" # an empty string here means all files in the project
     values:
       layout: "post"
-
 # Exclude from processing.
 # The following items will not be processed, by default.
 # Any item listed under the `exclude:` key here will be automatically added to
