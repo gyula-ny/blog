@@ -1,0 +1,22 @@
+baseURL = "http://gzn.hu"
+languageCode = "en-us"
+title = "Gzn"
+theme = "etch"
+enableInlineShortcodes = true
+
+[params]
+  description = "undescribed"
+  copyright = "Copyright © 2020 gzn"
+  dark = "auto"
+  highlight = true
+
+[permalinks]
+  posts = "/:year/:month/:day/:title/"
+
+[markup.goldmark.renderer]
+  # Allow HTML in Markdown
+  unsafe = true
+
+[markup.tableOfContents]
+  ordered = true
+
