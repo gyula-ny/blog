@@ -36,6 +36,7 @@
     margin-left: 10vw;
     grid-auto-flow: column;
   }
+  
   header nav {
     display: grid;
     justify-content: end;
@@ -79,8 +80,7 @@ main p {
         <h1><a class="u-url u-uid" href="/">
         <span class="u-author p-name">gzn</span></a></h1>
         <nav>
-            <a href="/about">about</a>
-            <a href="/contact">contact</a>
+            <a href="/contact">kontakt</a>
         </nav>
     </header>
 
@@ -95,10 +95,10 @@ main p {
           </span>
           <span class="post-title">
             {% if post.data.externalLink %}
-              🔗 <a class="external u-like-of" href="{{ post.data.externalLink }}" target="__blank">{{ post.data.title }}</a>
+              🔗 <a class="external u-like-of u-bookmark-of" href="{{ post.data.externalLink }}" target="__blank">{{ post.data.title }}</a>
               <div class="e-content">{{ post.templateContent }}</div>
             {% else %}
-             <a class="self" href="{{ post.url }}">{{ post.data.title }}</a>
+             <a class="self u-url" href="{{ post.url }}">{{ post.data.title }}</a>
             {% endif %}
           </span>
           
