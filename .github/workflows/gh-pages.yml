@@ -3,29 +3,34 @@ name: github pages
 on:
   push:
     branches:
-      - master
+      - source
 
 jobs:
   deploy:
-    runs-on: ubuntu-18.04
+    runs-on: ubuntu-20.04
+
+    strategy:
+      matrix:
+        node-version: [14.x]
+
     steps:
       - uses: actions/checkout@v2
-        with:
-          submodules: true
 
-      - name: Setup Hugo
-        uses: peaceiris/actions-hugo@v2
+      - name: Use Node.js ${{ matrix.node-version }}
+        uses: actions/setup-node@v1
         with:
-          hugo-version: '0.75.1'
+          node-version: ${{ matrix.node-version }}
 
-      - name: Build
-        run: hugo --minify
+      - name: Install dependencies & build
+        run: |
+          npm ci
+          npm run build
 
       - name: Deploy
         uses: peaceiris/actions-gh-pages@v3
         with:
           github_token: ${{ secrets.GITHUB_TOKEN }}
-          publish_dir: ./public
+          publish_dir: ./_site
           cname: gzn.hu
           
 

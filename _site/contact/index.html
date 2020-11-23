@@ -1,0 +1,93 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <meta http-equiv="X-UA-Compatible" content="ie=edge" />
+    <title>contact</title>
+    <style type="text/css">
+    body{line-height:1.6;font-size:32px;color:#444;}
+    h1,h2,h3{line-height:1.2}
+    </style>
+
+  <style>
+  body {
+    padding: 0;
+    margin: 0;
+  }
+  header nav a { display: block; margin: 0; }
+  header {
+    margin: 0;
+    padding: 0;
+    min-height: 10vh;
+    display: grid;
+    grid-auto-flow: column;
+  }
+
+  header h1 {
+    display: grid;
+    justify-content: start;
+    align-content: center;
+    margin-left: 10vw;
+    grid-auto-flow: column;
+  }
+  header nav {
+    display: grid;
+    justify-content: end;
+    grid-auto-flow: column;
+    align-content: center;
+    grid-gap: 1rem;
+    margin-right: 10vw;
+  }
+
+          .content-wrapper {
+          display: grid;
+          grid-template-columns:
+            1fr
+            min(65ch, 100%)
+            1fr;
+        }
+        .content-wrapper > * {
+          grid-column: 2;
+        }
+        .full-bleed {
+          width: 100%;
+          grid-column: 1 / 4;
+        }
+
+ul.posts {
+    margin: 1rem;
+    padding: 0;
+    list-style: none;
+}
+
+main p {
+  margin: 1rem;
+}
+
+
+  </style>
+
+</head>
+  <body>
+    <header>
+        <h1><a href="/">gzn</a></h1>
+        <nav>
+            <a href="/about">about</a>
+            <a href="/contact">contact</a>
+        </nav>
+    </header>
+
+    <main class="content-wrapper">
+    
+    
+      <h2>contact</h2>
+      <div class='content'></div>
+      <div class="back-link">
+        <a href="/">← Vissza</a>
+      </div>
+    
+
+    </main>
+  </body>
+</html>
