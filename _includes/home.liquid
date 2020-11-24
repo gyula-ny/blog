@@ -69,6 +69,10 @@ ul.posts {
     margin-top: 100px;
 }
 
+li.post {
+    margin-bottom: 20px;
+}
+
 main p {
   margin: 1rem;
 }
@@ -110,7 +114,7 @@ div.comment p {
           
           <span class="post-title">
             {% if post.data.externalLink %}
-              <img src="{{ post.data.favicon }}" width="18" /> <a class="external u-like-of u-bookmark-of" href="{{ post.data.externalLink }}" target="__blank">{{ post.data.title }}</a> - <span class="post-date">
+              <img src="{{ post.data.favicon }}" width="18" /> <a class="external u-like-of u-bookmark-of" href="{{ post.data.externalLink }}" target="__blank">{{ post.data.title }}</a> - <span class="dt-published post-date">
             {{ post.date | date: "%b %d, %Y" }}
           </span>
               <div class="comment e-content">{{ post.templateContent }}</div>
