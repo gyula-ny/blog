@@ -66,11 +66,27 @@ ul.posts {
     margin: 1rem;
     padding: 0;
     list-style: none;
+    margin-top: 100px;
 }
 
 main p {
   margin: 1rem;
 }
+
+.post-title img {
+  vertical-align: middle;
+}
+
+div.comment {
+  font-size: smaller;
+  margin-left: 40px;
+  border-left: 1px solid;
+}
+div.comment p {
+  margin-top: 0
+}
+
+
 
 
   </style>
@@ -91,17 +107,19 @@ main p {
       <ul class="posts">
       {% for post in collections.posts reversed %}
         <li class="post h-entry">
-          <span class="post-date">
-            {{ post.date | date: "%b %Y" | downcase }}
-          </span>
+          
           <span class="post-title">
             {% if post.data.externalLink %}
-              🔗 <a class="external u-like-of u-bookmark-of" href="{{ post.data.externalLink }}" target="__blank">{{ post.data.title }}</a>
-              <div class="e-content">{{ post.templateContent }}</div>
-            {% else %}
-             <a class="self u-url" href="{{ post.url }}">{{ post.data.title }}</a>
-            {% endif %}
+              <img src="{{ post.data.favicon }}" width="18" /> <a class="external u-like-of u-bookmark-of" href="{{ post.data.externalLink }}" target="__blank">{{ post.data.title }}</a> - <span class="post-date">
+            {{ post.date | date: "%b %d, %Y" }}
           </span>
+              <div class="comment e-content">{{ post.templateContent }}</div>
+            {% else %}
+             <a class="self u-url" href="{{ post.url }}">{{ post.data.title }}</a> - <span class="post-date">
+            {{ post.date | date: "%b %d, %Y" }}
+          </span>
+            {% endif %}
+          </span> 
           
         </li>
       {% endfor %}

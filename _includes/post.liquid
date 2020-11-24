@@ -71,6 +71,14 @@ main p {
   margin: 1rem;
 }
 
+time {
+  margin-left: 2rem;
+}
+
+main h2 {
+  margin-left: 1rem;
+}
+
 
   </style>
 
@@ -87,7 +95,7 @@ main p {
 
     <main class="content-wrapper">
         <h2 class="p-name">{{ title }}</h2>
-        <time datetime={{ post.date }} class="dt-published">{{ date | date: "%b %Y" | downcase }}</time>
+        <time datetime="{{ page.date }}" class="dt-published">{{ page.date | date: "%a, %b %d, %Y" }}</time>
       <div class='e-content content'>{{ content }}</div>
       <div class="back-link">
         <a href="/">← Vissza</a>
